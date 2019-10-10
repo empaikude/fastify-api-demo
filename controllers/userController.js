@@ -1,6 +1,5 @@
 const boom = require('boom');
 const Users = require('../models/Users');
-const knex = require('../config/connection');
 
 // Get all users
 exports.listUsers = async (req, reply) => {

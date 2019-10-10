@@ -4,7 +4,8 @@
   "description": "A blazing fast REST APIs with Node.js, MongoDB, Fastify and Swagger.",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/nodemon/bin/nodemon.js ./src/index.js",
+    "start": "node index",
+    "dev": "nodemon index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

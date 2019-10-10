@@ -1,10 +1,10 @@
 //load Elastic APM
-var apm = require('elastic-apm-node').start({ logLevel: 'trace' });
+//const apm = require('elastic-apm-node').start({ logLevel: 'trace' });
 
 require('dotenv').config();
 //import adn initialize database connections
 
-const { knex } = require('./config/connection');
+const { bookshelf } = require('./config/connection');
 //const mongoose = require('./config/connection');
 
 //Require fatify framework and instantiate it
@@ -50,7 +50,7 @@ const start = async () => {
     fastify.swagger();
   } catch (error) {
     fastify.log.error(error);
-    apm.captureError(error);
+    //apm.captureError(error);
     process.exit(1);
   }
 };

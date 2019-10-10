@@ -1,15 +1,9 @@
-const knex = require('../config/connection').knex;
+const bookshelf = require('../config/connection').bookshelf;
 
-knex.raw('select 1+1 as result').then(function() {
-  // there is a valid connection in the pool
-  console.log('DB connected');
-});
-const Bookshelf = require('bookshelf')(knex);
-
-const User = Bookshelf.Model.extend({
+const User = bookshelf.Model.extend({
   tableName: 'users',
   hasTimestamps: true,
   hidden: ['password']
 });
 
-module.exports = Bookshelf.model('User', User);
+module.exports = bookshelf.model('User', User);
