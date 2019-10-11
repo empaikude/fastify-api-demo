@@ -11,7 +11,7 @@ exports.up = knex =>
                 table.text('text').nullable();
                 table.string('src').nullable();
                 //table.integer('created_by_id').references('user.id');
-                table.timestamps(true, true);
+                table.timestamps(false, true);
             });
         }
         return true;

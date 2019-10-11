@@ -9,7 +9,7 @@ exports.up = knex =>
                 table.integer('order').notNullable();
                 table.text('description').nullable();
                 //table.integer('created_by_id').references('user.id');
-                table.timestamps(true, true);
+                table.timestamps(false, true);
             });
         }
         return true;
