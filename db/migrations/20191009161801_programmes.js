@@ -7,8 +7,9 @@ exports.up = knex =>
                 table.string('code').nullable();
                 table.string('name').notNullable();
                 table.integer('years').notNullable();
-                table.string('prefix').notNullable();
+                table.string('prefix').nullable();
                 table.text('description').nullable();
+                table.timestamps(false, true);
             }).createTable('level', table => {
                 table.increments('id').primary().unsigned();
                 table.string('name').notNullable();

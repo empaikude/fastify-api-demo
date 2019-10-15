@@ -1,42 +1,28 @@
 // Import our Controllers
-const carController = require('../controllers/carController');
-const userController = require('../controllers/userController');
-//import swagger routes schema
-const schemaDocumentation = require('../documentation/');
+const institutionRoutes = require('./institutionRoutes');
+const facultyRoutes = require('./facultyRoutes');
+const departmentRoutes = require('./departmentRoutes');
+const programmeRoutes = require('./programmeRoutes');
+const courseRoutes = require('./courseRoutes');
+const courseModuleRoutes = require('./courseModuleRoutes');
+const courseLessonRoutes = require('./courseLessonRoutes');
+const courseContentRoutes = require('./courseContentRoutes');
+const courseTestRoutes = require('./courseTestRoutes');
+const courseQuestionRoutes = require('./courseQuestionRoutes');
+const levelRoutes = require('./levelRoutes');
+
 const routes = [
-  {
-    method: 'GET',
-    url: '/api/cars',
-    handler: carController.getCars,
-    schema: schemaDocumentation.getCars
-  },
-  {
-    method: 'GET',
-    url: '/api/cars/:id',
-    handler: carController.getSingleCar,
-    schema: schemaDocumentation.getSingleCar
-  },
-  {
-    method: 'POST',
-    url: '/api/cars',
-    handler: carController.addCar,
-    schema: schemaDocumentation.addSingleCar
-  },
-  {
-    method: 'PUT',
-    url: '/api/cars/:id',
-    handler: carController.updateCar
-  },
-  {
-    method: 'DELETE',
-    url: '/api/cars/:id',
-    handler: carController.deleteCar
-  },
-  {
-    method: 'GET',
-    url: '/api/users',
-    handler: userController.listUsers
-  }
+  ...institutionRoutes,
+  ...facultyRoutes,
+  ...departmentRoutes,
+  ...programmeRoutes,
+  ...courseRoutes,
+  ...courseModuleRoutes,
+  ...courseLessonRoutes,
+  ...courseContentRoutes,
+  ...courseTestRoutes,
+  ...courseQuestionRoutes,
+  ...levelRoutes
 ];
 
 module.exports = routes;

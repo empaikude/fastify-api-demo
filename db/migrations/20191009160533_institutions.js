@@ -14,6 +14,7 @@ exports.up = knex =>
                 table.string('facebook').nullable();
                 table.string('youtube').nullable();
                 table.text('description').nullable();
+                table.timestamps(false, true);
             });
         }
         return true;

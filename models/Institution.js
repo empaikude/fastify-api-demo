@@ -1,12 +1,12 @@
 const bookshelf = require('../config/connection').bookshelf;
 
-const User = bookshelf.Model.extend({
+const Institution = bookshelf.Model.extend({
     tableName: 'institution',
     hasTimestamps: true,
 
-    departments() {
-        return this.hasMany('Department')
+    faculties() {
+        return this.hasMany('Faculty')
     }
 });
 
-module.exports = bookshelf.model('User', User);
+module.exports = bookshelf.model('Institution', Institution);

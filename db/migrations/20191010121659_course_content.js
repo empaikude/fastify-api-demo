@@ -6,7 +6,7 @@ exports.up = knex =>
                 table.increments('id').primary().unsigned();
                 table.integer('course_lesson_id').references('course_lesson.id');
                 table.string('title').notNullable();
-                table.enu('content_type').notNullable();
+                table.enu('content_type', ['text', 'image', 'audio', 'video', 'infographic']).notNullable();
                 table.integer('order').notNullable();
                 table.text('text').nullable();
                 table.string('src').nullable();

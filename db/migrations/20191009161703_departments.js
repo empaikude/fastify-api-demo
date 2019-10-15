@@ -6,7 +6,10 @@ exports.up = knex =>
                 table.integer('faculty_id').references('faculty.id');
                 table.string('code').notNullable();
                 table.string('name').notNullable();
+                table.string('email').unique().nullable();
+                table.string('phone').nullable();
                 table.text('description').nullable();
+                table.timestamps(false, true);
             });
         }
         return true;
