@@ -1,8 +1,6 @@
 const levelProperties = {
     id: { type: "integer", readOnly: true },
     name: { type: "string" },
-    created_at: { type: "string", format: "date-time", readOnly: true },
-    updated_at: { type: "string", format: "date-time", readOnly: true }
 };
 
 swagger = {
@@ -11,7 +9,6 @@ swagger = {
     summary: "Get all levels in the database",
     tags: ["level"],
     params: {},
-    body: {},
     response: {
       200: {
         description: "Array containing all levels",
@@ -26,7 +23,6 @@ swagger = {
     summary: "Get a level from the database",
 
     params: { id: { type: "string" } },
-    body: {},
     response: {
       200: {
         description: "A level",
@@ -79,7 +75,6 @@ swagger = {
     summary: "Delete a level from the database",
 
     params: { id: { type: "string" } },
-    body: {},
     response: {
       200: {
         description: "",

@@ -1,7 +1,40 @@
 const courseQuestionProperties = {
     id: { type: "integer", readOnly: true },
-    course_id: { type: "integer" },
+    course_lesson_id: { type: "integer" },
     question: { type: "string" },
+    options: {
+      type: "object",
+      properties: {
+        "A" : {
+          type: "object",
+          properties: {
+            "text": { type: "string" },
+            "is_answer": { type: "boolean", default: false }
+          }
+        },
+        "B" : {
+          type: "object",
+          properties: {
+            "text": { type: "string" },
+            "is_answer": { type: "boolean", default: false }
+          }
+        },
+        "C" : {
+          type: "object",
+          properties: {
+            "text": { type: "string" },
+            "is_answer": { type: "boolean", default: false }
+          }
+        },
+        "D" : {
+          type: "object",
+          properties: {
+            "text": { type: "string" },
+            "is_answer": { type: "boolean", default: false }
+          }
+        }
+      }
+    },
     order: { type: "integer" },
     media_src: { type: "string" },
     media_type: { type: "string" },
@@ -16,7 +49,6 @@ swagger = {
     summary: "Get all course questions in the database",
     tags: ["coursequestion"],
     params: {},
-    body: {},
     response: {
       200: {
         description: "Array containing all course questions",
@@ -31,7 +63,6 @@ swagger = {
     summary: "Get a course question from the database",
 
     params: { id: { type: "string" } },
-    body: {},
     response: {
       200: {
         description: "A course Question",
@@ -48,7 +79,7 @@ swagger = {
     params: {},
     body: {
       type: "object",
-      required: ["course_id", "name", "order"],
+      required: ["course_lesson_id", "question", "options", "marks"],
       properties: courseQuestionProperties
     },
     response: {
@@ -67,7 +98,7 @@ swagger = {
     params: { id: { type: "string" } },
     body: {
       type: "object",
-      required: ["course_id", "name", "order"],
+      required: ["course_lesson_id", "question", "options", "marks"],
       properties: courseQuestionProperties    
     },
     response: {
@@ -84,7 +115,6 @@ swagger = {
     summary: "Delete a course Question from the database",
 
     params: { id: { type: "string" } },
-    body: {},
     response: {
       200: {
         description: "",

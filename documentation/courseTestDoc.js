@@ -15,7 +15,6 @@ swagger = {
     summary: "Get all course tests in the database",
     tags: ["coursetest"],
     params: {},
-    body: {},
     response: {
       200: {
         description: "Array containing all course tests",
@@ -30,7 +29,6 @@ swagger = {
     summary: "Get a course Test from the database",
 
     params: { id: { type: "string" } },
-    body: {},
     response: {
       200: {
         description: "A course Test",
@@ -83,7 +81,6 @@ swagger = {
     summary: "Delete a course Test from the database",
 
     params: { id: { type: "string" } },
-    body: {},
     response: {
       200: {
         description: "",

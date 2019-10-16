@@ -1,11 +1,11 @@
 const boom = require('boom');
-const Institution = require('../models/Institution');
+const Level = require('../models/Level');
 
-// Get all Institutions
+// Get all Levels
 exports.list = async (req, reply) => {
     try {
-        const institution = await Institution.fetchAll();
-        return institution;
+        const levels = await Level.fetchAll();
+        return levels.models;
     } catch (err) {
         throw boom.boomify(err);
     }
@@ -13,33 +13,19 @@ exports.list = async (req, reply) => {
 
 exports.get = async (req, reply) => {
     try {
-        const institution = await Institution.where('id', req.params.id).fetch();
-        //const institution = await Institution.forge({id: req.params.id}).fetch();
-        return institution;
+        const level = await Level.where('id', req.params.id).fetch();
+        //const level = await Level.forge({id: req.params.id}).fetch();
+        return level;
     } catch (err) {
         throw boom.boomify(err);
     }
 };
 
 exports.add = async (req, reply) => {
-    const {code, name, address, email, phone, motto, website, twitter, facebook, youtube, description} = req.body
-    
     try {
-        const newInstitution = await Institution.forge({ 
-            code, 
-            name, 
-            address, 
-            email, 
-            phone, 
-            motto, 
-            website, 
-            twitter,
-            facebook,
-            youtube,
-            description
-        }).save();
-
-        return newUser;
+        const newLevel = await Level.forge(req.body).save();
+        console.log(req.body)
+        return newLevel;
     } catch (err) {
         throw boom.boomify(err);
     }
@@ -47,13 +33,13 @@ exports.add = async (req, reply) => {
 
 exports.update = async (req, reply) => {
     try {
-        const institution = await Institution.where('id', req.params.id).fetch();
-        if(institution) {
-            institution.set(req.body)
-            institution.save()
+        const level = await Level.where('id', req.params.id).fetch();
+        if(level) {
+            level.set(req.body)
+            level.save()
         }
 
-        return institution;
+        return Level;
     } catch (err) {
         throw boom.boomify(err);
     }
@@ -61,7 +47,7 @@ exports.update = async (req, reply) => {
 
 exports.delete = async (req, reply) => {
     try {
-        const info = await Institution.where('id', req.params.id).destroy();
+        const info = await Level.where('id', req.params.id).destroy();
         return info;
     } catch (err) {
         throw boom.boomify(err);

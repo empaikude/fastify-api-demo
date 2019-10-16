@@ -5,7 +5,7 @@ const Institution = require('../models/Institution');
 exports.list = async (req, reply) => {
     try {
         const institutions = await Institution.fetchAll();
-        return institutions;
+        return institutions.models;
     } catch (err) {
         throw boom.boomify(err);
     }
@@ -25,7 +25,7 @@ exports.add = async (req, reply) => {
     try {
         const newInstitution = await Institution.forge(req.body).save();
 
-        return newUser;
+        return newInstitution;
     } catch (err) {
         throw boom.boomify(err);
     }

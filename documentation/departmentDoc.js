@@ -16,7 +16,6 @@ swagger = {
     summary: "Get all departments in the database",
     tags: ["department"],
     params: {},
-    body: {},
     response: {
       200: {
         description: "Array containing all departments",
@@ -31,7 +30,6 @@ swagger = {
     summary: "Get a department from the database",
 
     params: { id: { type: "string" } },
-    body: {},
     response: {
       200: {
         description: "A department",
@@ -84,7 +82,6 @@ swagger = {
     summary: "Delete a department from the database",
 
     params: { id: { type: "string" } },
-    body: {},
     response: {
       200: {
         description: "",

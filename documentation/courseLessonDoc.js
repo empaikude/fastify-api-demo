@@ -14,7 +14,6 @@ swagger = {
     summary: "Get all course lessons in the database",
     tags: ["courselesson"],
     params: {},
-    body: {},
     response: {
       200: {
         description: "Array containing all course lessons",
@@ -29,7 +28,6 @@ swagger = {
     summary: "Get a course lesson from the database",
 
     params: { id: { type: "string" } },
-    body: {},
     response: {
       200: {
         description: "A course lesson",
@@ -82,7 +80,6 @@ swagger = {
     summary: "Delete a course lesson from the database",
 
     params: { id: { type: "string" } },
-    body: {},
     response: {
       200: {
         description: "",

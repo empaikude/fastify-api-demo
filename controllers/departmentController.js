@@ -5,7 +5,7 @@ const Department = require('../models/Department');
 exports.list = async (req, reply) => {
     try {
         const departments = await Department.fetchAll();
-        return departments;
+        return departments.models;
     } catch (err) {
         throw boom.boomify(err);
     }

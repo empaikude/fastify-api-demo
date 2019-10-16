@@ -4,7 +4,7 @@ exports.up = knex =>
             return knex.schema.createTable('faculty', table => {
                 table.increments('id').primary().unsigned();
                 table.integer('institution_id').references('institution.id');
-                table.string('code').notNullable();
+                table.string('code').nullable();
                 table.string('name').notNullable();
                 table.string('email').unique().nullable();
                 table.string('phone').nullable();

@@ -5,7 +5,7 @@ const CourseContent = require('../models/CourseContent');
 exports.list = async (req, reply) => {
     try {
         const courseContents = await CourseContent.fetchAll();
-        return courseContents;
+        return courseContents.models;
     } catch (err) {
         throw boom.boomify(err);
     }

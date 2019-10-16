@@ -18,4 +18,7 @@ exports.up = knex =>
         return true;
     });
 
-exports.down = knex => knex.schema.dropTable('programme');
+exports.down = knex => {
+    return knex.schema.dropTable('programme')
+        .dropTable('level');
+}

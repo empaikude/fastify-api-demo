@@ -16,7 +16,6 @@ swagger = {
     summary: "Get all programmes in the database",
     tags: ["programme"],
     params: {},
-    body: {},
     response: {
       200: {
         description: "Array containing all programmes",
@@ -31,7 +30,6 @@ swagger = {
     summary: "Get a programme from the database",
 
     params: { id: { type: "string" } },
-    body: {},
     response: {
       200: {
         description: "A programme",
@@ -84,7 +82,6 @@ swagger = {
     summary: "Delete a programme from the database",
 
     params: { id: { type: "string" } },
-    body: {},
     response: {
       200: {
         description: "",

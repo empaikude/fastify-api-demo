@@ -3,6 +3,7 @@ const courseProperties = {
     programme_id: { type: "integer" },
     code: { type: "string" },
     name: { type: "string" },
+    level_id: { type: "integer" },
     units: { type: "integer" },
     description: { type: "string" },
     created_at: { type: "string", format: "date-time", readOnly: true },
@@ -15,7 +16,6 @@ swagger = {
     summary: "Get all courses in the database",
     tags: ["course"],
     params: {},
-    body: {},
     response: {
       200: {
         description: "Array containing all courses",
@@ -30,7 +30,6 @@ swagger = {
     summary: "Get a course from the database",
 
     params: { id: { type: "string" } },
-    body: {},
     response: {
       200: {
         description: "A course",
@@ -47,7 +46,7 @@ swagger = {
     params: {},
     body: {
       type: "object",
-      required: ["programme_id", "code", "name", "units"],
+      required: ["programme_id", "code", "name", "level_id", "units"],
       properties: courseProperties
     },
     response: {
@@ -66,7 +65,7 @@ swagger = {
     params: { id: { type: "string" } },
     body: {
       type: "object",
-      required: ["programme_id", "code", "name", "units"],
+      required: ["programme_id", "code", "name", "level_id", "units"],
       properties: courseProperties    
     },
     response: {
@@ -83,7 +82,6 @@ swagger = {
     summary: "Delete a course from the database",
 
     params: { id: { type: "string" } },
-    body: {},
     response: {
       200: {
         description: "",

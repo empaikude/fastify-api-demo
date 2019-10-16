@@ -4,8 +4,10 @@ exports.up = knex =>
         if (!exists) {
             return knex.schema.createTable('course', table => {
                 table.increments('id').primary().unsigned();
-                table.string('code').nullable();
+                table.integer('programme_id').unsigned().references('programme.id');
+                table.string('code').notNullable();
                 table.string('name').notNullable();
+                table.integer('level_id').unsigned().references('level.id');
                 table.integer('units').notNullable();
                 table.text('description').nullable();
                 //table.integer('created_by_id').references('user.id');
